@@ -196,23 +196,7 @@ body {
     object-fit: cover;
     border-radius: 5px;
     background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Display placeholder text when image is not found */
-.image-frame img::before {
-    content: 'Add your photo here';
-    position: absolute;
-    width: 170px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9em;
-    color: #999;
-    text-align: center;
+    display: block;
 }
 
 .frame-decoration {
