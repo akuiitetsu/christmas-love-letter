@@ -24,6 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Preload images and handle errors
+    const imageElements = document.querySelectorAll('.image-frame img');
+    imageElements.forEach((img, index) => {
+        img.onerror = function() {
+            console.error(`Failed to load image: ${this.src}`);
+            // Set a background color as fallback
+            this.parentElement.style.background = 'linear-gradient(135deg, #ffb3c1, #ff8fab)';
+        };
+        
+        img.onload = function() {
+            console.log(`Successfully loaded image ${index + 1}`);
+        };
+    });
+    
     // Create floating hearts
     function createFloatingHeart() {
         const heart = document.createElement('div');

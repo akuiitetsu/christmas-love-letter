@@ -183,6 +183,7 @@ body {
     opacity: 0;
     transform: scale(0) rotate(0deg);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
 }
 
 .image-frame.visible {
@@ -194,9 +195,23 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    object-position: center;
     border-radius: 5px;
-    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
     display: block;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+}
+
+.image-frame img:not([src]),
+.image-frame img[src=""],
+.image-frame img[src*="placeholder"] {
+    opacity: 0.3;
+}
+
+/* Force image loading */
+.image-frame img {
+    image-rendering: auto;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 .frame-decoration {
@@ -245,6 +260,8 @@ body {
     
     .image-frame img {
         height: 150px;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
