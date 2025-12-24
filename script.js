@@ -12,30 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Show the letter with pop animation
             setTimeout(() => {
                 letterElement.classList.add('visible');
-                
-                // Show images sequentially every 2 seconds
-                const images = document.querySelectorAll('.image-frame');
-                images.forEach((image, index) => {
-                    setTimeout(() => {
-                        image.classList.add('visible');
-                    }, 2000 * (index + 1));
-                });
             }, 300);
         }
-    });
-    
-    // Preload images and handle errors
-    const imageElements = document.querySelectorAll('.image-frame img');
-    imageElements.forEach((img, index) => {
-        img.onerror = function() {
-            console.error(`Failed to load image: ${this.src}`);
-            // Set a background color as fallback
-            this.parentElement.style.background = 'linear-gradient(135deg, #ffb3c1, #ff8fab)';
-        };
-        
-        img.onload = function() {
-            console.log(`Successfully loaded image ${index + 1}`);
-        };
     });
     
     // Create floating hearts
