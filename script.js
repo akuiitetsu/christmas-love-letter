@@ -12,6 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Show the letter with pop animation
             setTimeout(() => {
                 letterElement.classList.add('visible');
+                
+                // Show images after all letter content has animated (approximately 13.5 seconds)
+                setTimeout(() => {
+                    const images = document.querySelectorAll('.image-frame');
+                    images.forEach((image, index) => {
+                        setTimeout(() => {
+                            image.classList.add('visible');
+                        }, 500 * index); // 0.5 second delay between each image
+                    });
+                }, 13500); // Wait for all letter animations to complete
             }, 300);
         }
     });
