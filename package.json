@@ -1,0 +1,15 @@
+{
+  "name": "christmas-love-letter",
+  "version": "1.0.0",
+  "description": "Animated Christmas love letter",
+  "scripts": {
+    "start": "serve .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "christmas",
+    "love-letter"
+  ],
+  "author": "tonio",
+  "license": "MIT"
+}
